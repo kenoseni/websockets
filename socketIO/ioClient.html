@@ -1,0 +1,13 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+<script>
+  const socket = io("http://localhost:5912");
+
+  console.log(socket);
+
+  socket.on("connect", (data) => {
+    socket.on("welcome", (msg) => {
+      console.log("!!!!!!!!!!!!!!!!!!!!!!", msg);
+    });
+    socket.emit("message from client", "Client just emitted a message");
+  });
+</script>
