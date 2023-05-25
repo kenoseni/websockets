@@ -8,7 +8,7 @@ app.use(cors());
 
 app.use(express.static(__dirname + "/public"));
 
-const server = app.listen(5912);
+const server = app.listen(1759);
 
 const io = socketio(server);
 

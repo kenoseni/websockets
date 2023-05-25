@@ -3,7 +3,6 @@ const socket2 = io("http://localhost:5912/admin"); // this namespace is called /
 // const socket3 = io("http://localhost:5912/marketing"); // this namespace is called /marketing
 
 socket.on("connect", (data) => {
-  console.log(">>>>>>>>>>>>>>", socket.id);
   socket.on("welcome", (msg) => {
     console.log("!!!!!!!!!!!!!!!!!!!!!!", msg);
   });
@@ -16,10 +15,6 @@ socket.on("joined", (msg) => {
 
 socket2.on("connect", (data) => {
   console.log(socket2.id);
-
-  socket2.on("Welcome", (msg) => {
-    console.log(">>>>>>>>>>>>>", msg);
-  });
 });
 
 document.querySelector("#message-form").addEventListener("submit", (event) => {
