@@ -5,7 +5,9 @@
   "scripts": {
     "native-ws": "nodemon nativeWs/justWsServer.js",
     "io-server": "nodemon socketIO/ioServer.js",
-    "chat-server": "nodemon socketIO/chat.js"
+    "chat-server": "nodemon socketIO/chat.js",
+    "io-v4": "nodemon socketIOv4/basics.js",
+    "chat-server-2": "nodemon socketIOv4/chat.js"
   },
   "keywords": [],
   "author": "",
