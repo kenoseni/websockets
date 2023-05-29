@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static(`${__dirname}/public`));
 
 const server = app.listen(4161, () => {
-  console.log("I have first connected to an http server");
+  console.log("I have connected to an http server");
 });
 const io = socketio(server);
 
