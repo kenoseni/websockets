@@ -1,0 +1,27 @@
+{
+  "name": "slack-clone-v4",
+  "version": "1.0.0",
+  "description": "Using socket.io v4 to build a slack clone",
+  "main": "slack.js",
+  "scripts": {
+    "start-dev": "nodemon slack-clone-v4/slack.js"
+  },
+  "keywords": [
+    "websocket",
+    "sockt.io",
+    "slack clone",
+    "chat",
+    "namespaces",
+    "rooms"
+  ],
+  "author": "Olusola Oseni",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
