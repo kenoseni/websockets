@@ -20,6 +20,8 @@ let roomList = document.querySelector(".room-list");
 socket.on("nsList", (nsData) => {
   console.log(nsData);
 
+  // clear the room list content
+  namespacesDiv.innerHTML = "";
   nsData.forEach((ns) => {
     // Update html with each ns
     namespacesDiv.innerHTML += `<div class="namespace" ns=${ns.endpoint}>
@@ -32,19 +34,10 @@ socket.on("nsList", (nsData) => {
   Array.from(document.getElementsByClassName("namespace")).forEach(
     (element) => {
       element.addEventListener("click", (e) => {
-        const nsEndpoint = element.getAttribute("ns");
-
-        const clickedNS = nsData.find((row) => row.endpoint === nsEndpoint);
-        const rooms = clickedNS.rooms;
-
-        // clear the room list content
-        roomList.innerHTML = "";
-
-        // loop through each room and add it to the dom
-        rooms.forEach((room) => {
-          roomList.innerHTML += `<li><span class="glyphicon glyphicon-lock"></span>${room.roomTitle}</li>`;
-        });
+        joinNS(element, nsData, roomList);
       });
     }
   );
+
+  joinNS(document.getElementsByClassName("namespace")[0], nsData, roomList);
 });
